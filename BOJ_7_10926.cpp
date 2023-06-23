@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main(){
-	int year;
-	scanf("%d", &year); 
+	char id[50]; // 50자 이하의 문자형 받기
+	scanf("%s", id); // 배열은 & 필요 없음
 	
-	printf("%d\n", year-543); 
+	printf("%s??!\n", id); 
 
 	return 0;
 }
