@@ -2,11 +2,8 @@
 //A+B - 4
 
 int main(){
-	
-	while (1){
-		int a, b;
-		scanf("%d %d", &a, &b);
-		
+	int a, b;
+	while (scanf("%d %d", &a, &b) != EOF){  // EOF : End of File, 윈도우에서는 Ctrl + z 로 강제실행
 		printf("%d\n", a + b);
 	}
 	
