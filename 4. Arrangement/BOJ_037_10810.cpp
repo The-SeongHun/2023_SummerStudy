@@ -1,5 +1,5 @@
 #include <stdio.h>
-//최댓값
+//공 넣기
 
 int main(){
 	int j, k, l, n, m;
