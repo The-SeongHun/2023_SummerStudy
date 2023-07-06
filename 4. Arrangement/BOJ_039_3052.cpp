@@ -13,7 +13,6 @@ int main(){
 		scanf("%d", &a[i]);
 		remain[i] = a[i] % 42;
 		for (int j = 0; j < i; j++){
-
 			if (remain[j] == remain[i]) val += 1;
 		}
 		if (val == 0){
