@@ -15,30 +15,30 @@ int main() {
 		
 		float_score = 0;
 		
-		if (score[0] == 'A') {
+		if (score[0] == 'A') { //수정하기 장준일 말한 대로
 			if (score[1] == '+') float_score = 4.5;
-			if (score[1] == '0') float_score = 4.0;
+			else float_score = 4.0;
 		}
 		else if (score[0] == 'B') {
 			if (score[1] == '+') float_score = 3.5;
-			if (score[1] == '0') float_score = 3.0;
+			else float_score = 3.0;
 		}
 		else if (score[0] == 'C') {
 			if (score[1] == '+') float_score = 2.5;
-			if (score[1] == '0') float_score = 2.0;
+			else float_score = 2.0;
 		}
 		else if (score[0] == 'D') {
 			if (score[1] == '+') float_score = 1.5;
-			if (score[1] == '0') float_score = 1.0;
+			else float_score = 1.0;
 		}
 		else if (score[0] == 'P') credit = 0;
 		
 		credit_sum += credit;
-		score_sum += float_score;
+		score_sum += float_score * credit;
 		
 		
 	}
-	printf("%f\n", float_score/credit_sum);
+	printf("%f\n", score_sum/credit_sum);
 
 	return 0;
 }
