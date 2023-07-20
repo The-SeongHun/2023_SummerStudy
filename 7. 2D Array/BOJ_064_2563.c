@@ -1,23 +1,32 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-// 세로읽기
-// 문자열의 배열을 다루는 문제
+#include <math.h> //abs, labs, fabs
+// 색종이
+// 2차원 배열을 활용하여 색종이로 평면을 덮는 문제
 
 int main() {
-	char a[5][16] = { };
+	int n;
+	scanf ("%d", &n);
 	
-	for (int i = 0; i < 5; i++) {
-		scanf("%s", a[i]);
+	int S = 100 * n;
+	
+	int a[n][2];
+	
+	for (int i = 0; i < n; i++) {
+		scanf("%d %d", &a[i][0], &a[i][1]);
 	}
 	
-	for (int i = 0; i < 15; i++) {
-		for (int j = 0; j < 5; j++) {
-			if (a[j][i] == '\0' || a[j][i] == ' ') continue;
-			printf("%c", a[j][i]);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (abs(a[i][0] - a[j][0]) < 10 && abs(a[i][1] - a[j][1]) < 10) {
+				int duplication = abs((a[i][0] - a[j][0]) * (a[i][1] - a[j][1]));
+				S -= duplication;
+			}
 		}
 	}
 	
+	printf("%d", S);
 	return 0;
 }
 
