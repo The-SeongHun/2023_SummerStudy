@@ -4,7 +4,6 @@
 // #include <stdlib.h> //abs, labs
 // #include <math.h> //abs, labs, fabs
 // 중앙 이동 알고리즘
-// 둘씩 반복해서 나눴을 때 점의 개수를 세는 문제
 
 int main() {
 	int n;
