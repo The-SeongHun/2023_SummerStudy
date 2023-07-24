@@ -4,7 +4,7 @@
 // #include <stdlib.h> //abs, labs
 // #include <math.h> //abs, labs, fabs
 // 진법 변환
-// 
+// 진법에 대해 배우는 문제
 
 int main() {
 	char num[30]; // 2진법으로 1억이 28자리임
