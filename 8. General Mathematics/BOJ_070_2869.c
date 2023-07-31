@@ -5,24 +5,16 @@
 // 달팽이의 움직임을 계산하는 문제
 
 int main() {
-	int a, b, v;
+	int a, b, v, result;
 	
 	scanf ("%d %d %d", &a, &b, &v);
-	int i = 0;
 	
-	v -= b;
+	if ((v - a) % (a - b) == 0) result = (v - a) / (a - b) + 1;
+	else result = (v - a) / (a - b) + 2;
 	
-	while (1) {
-		v += b;
-		v -= a;
-		
-		i++;
-		
-		if (v < 0) break;
-	}
-	
-	printf ("%d", i);
+	printf ("%d", result);
 	
 	return 0;
 }
 
+// 노트에 계산해서 풂. x(a-b) >= v-a // result = x + 1
