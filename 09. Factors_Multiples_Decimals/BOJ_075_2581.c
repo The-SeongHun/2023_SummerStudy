@@ -17,26 +17,40 @@ int main() {
 	int num[n + 1];
 	init(n, num);	
 	
-	double std = sqrt(n);
-	int sum = 0, count = 0;
+	//double std = pow(n, 0.5);
+	int sum = 0, min = 0;
 	
-	for (int i = 2; i <= std; i++) {
+	for (int i = 2; ; i++) {
 		if (num[i] == 1) continue;
 		
 		if (count_factors(num[i]) == 2) {
-			if (num[i] >= m) {
-				sum += num[i];
-				count++;
-			}
 			
-			for (int j = 2; i * j <= n; j++) {
-				num[i * j] = 1;
+			if (num[i] >= m) {
+				
+				min = num[i];
+				break;
 			}
 		}
 		
 	}
 	
-	printf("%d\n%d", sum, count);
+	for (int i = 2; i <= n; i++) {
+		if (num[i] == 1) continue;
+		
+		if (count_factors(num[i]) == 2) {
+			
+			for (int j = 2; i * j <= n; j++) {
+				num[i * j] = 1;
+			}
+			
+			if (num[i] >= m) {
+				sum += num[i];
+			}
+		}
+		
+	}
+	
+	printf("%d\n%d", sum, min);
 	
 	
 	
@@ -56,6 +70,8 @@ int init(int a, int arr[]) { // 배열을 매개변수로 활용, 선언할 때�
 	for (int i = 2; i < a; i++){
 		arr[i] = i;
 	}
+	
+	return 0;
 }
 
 int count_factors(int a) {
@@ -68,4 +84,3 @@ int count_factors(int a) {
 
 	return count;
 }
-
