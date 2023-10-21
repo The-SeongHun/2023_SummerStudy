@@ -12,7 +12,7 @@ int count_factors(int a);
 int main() {
 	int m, n;
 	
-	scanf("%d %d", &m, &n);
+	scanf("%d\n%d", &m, &n);
 	
 	int num[n + 1];
 	init(n, num);	
@@ -20,7 +20,7 @@ int main() {
 	//double std = pow(n, 0.5);
 	int sum = 0, min = 0;
 	
-	for (int i = 2; ; i++) {
+	for (int i = 1; i <= n; i++) {
 		if (num[i] == 1) continue;
 		
 		if (count_factors(num[i]) == 2) {
@@ -50,24 +50,15 @@ int main() {
 		
 	}
 	
-	printf("%d\n%d", sum, min);
-	
-	
-	
-	// int result = 0;
-	
-	// for (int i = 0; i < n; i++) {
-	// 	if (count[i] == 2) result++;
-	// }
-	
-	// printf("%d\n", result);
+	if (sum == 0) printf("-1\n");
+	else printf("%d\n%d\n", sum, min);
 
 	return 0;
 }
 
 int init(int a, int arr[]) { // 배열을 매개변수로 활용, 선언할 때는 arr[] 또는 *arr
 	
-	for (int i = 2; i < a; i++){
+	for (int i = 1; i <= a; i++){
 		arr[i] = i;
 	}
 	

@@ -6,20 +6,19 @@
 // 직사각형을 완성하는 문제
 
 int main() {
-	int x, y, w, h, min_d;
-	scanf("%d %d %d %d", &x, &y, &w, &h);
+	int spot[4][2];
 	
-	if (x > y) min_d = y;
-	else min_d = x;
+	for (int i = 0; i < 3; i++) {
+		scanf("%d %d", &spot[i][0], &spot[i][1]);
+	}
 	
-	if (min_d > w - x) min_d = w - x;
+	for (int i = 0; i < 2; i++) {
+		if (spot[0][i] == spot[1][i]) spot[3][i] = spot[2][i];
+		else if (spot[0][i] == spot[2][i]) spot[3][i] = spot[1][i];
+		else spot[3][i] = spot[0][i];
+	}
 	
-	if (min_d > h - y) min_d = h - y;
-	
-	printf("%d\n", min_d);
+	printf("%d %d\n", spot[3][0], spot[3][1]);
 	
 	return 0;
 }
-
-1. 약수, 배수와 소수 - 11653번 해결
-2. 기하: 직사각형과 삼각형 - 27323번, 1085번 해결
